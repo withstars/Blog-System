@@ -9,7 +9,7 @@ public class Article {
 
     private String keywords;
 
-    private String desc;
+    private String desci;
 
     private String pic;
 
@@ -45,12 +45,12 @@ public class Article {
         this.keywords = keywords == null ? null : keywords.trim();
     }
 
-    public String getDesc() {
-        return desc;
+    public String getdesci() {
+        return desci;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc == null ? null : desc.trim();
+    public void setdesci(String desci) {
+        this.desci = desci == null ? null : desci.trim();
     }
 
     public String getPic() {

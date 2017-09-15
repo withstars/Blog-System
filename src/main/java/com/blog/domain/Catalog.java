@@ -9,7 +9,7 @@ public class Catalog {
 
     private Boolean type;
 
-    private String desc;
+    private String desci;
 
     public Integer getId() {
         return id;
@@ -43,11 +43,11 @@ public class Catalog {
         this.type = type;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getdesci() {
+        return desci;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc == null ? null : desc.trim();
+    public void setdesci(String desci) {
+        this.desci = desci == null ? null : desci.trim();
     }
 }
