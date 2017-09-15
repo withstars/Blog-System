@@ -5,7 +5,7 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="keywords" property="keywords" jdbcType="VARCHAR" />
-    <result column="desc" property="desc" jdbcType="VARCHAR" />
+    <result column="desci" property="desci" jdbcType="VARCHAR" />
     <result column="pic" property="pic" jdbcType="VARCHAR" />
     <result column="click" property="click" jdbcType="INTEGER" />
     <result column="time" property="time" jdbcType="TIMESTAMP" />
@@ -15,7 +15,7 @@
     <result column="content" property="content" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, title, keywords, desc, pic, click, time, catalog_id
+    id, title, keywords, desci, pic, click, time, catalog_id
   </sql>
   <sql id="Blob_Column_List" >
     content
@@ -34,10 +34,10 @@
   </delete>
   <insert id="insert" parameterType="com.blog.domain.Article" >
     insert into article (id, title, keywords, 
-      desc, pic, click, time, 
+      desci, pic, click, time,
       catalog_id, content)
     values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{keywords,jdbcType=VARCHAR}, 
-      #{desc,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{click,jdbcType=INTEGER}, #{time,jdbcType=TIMESTAMP}, 
+      #{desci,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{click,jdbcType=INTEGER}, #{time,jdbcType=TIMESTAMP},
       #{catalogId,jdbcType=INTEGER}, #{content,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.blog.domain.Article" >
@@ -52,8 +52,8 @@
       <if test="keywords != null" >
         keywords,
       </if>
-      <if test="desc != null" >
-        desc,
+      <if test="desci != null" >
+        desci,
       </if>
       <if test="pic != null" >
         pic,
@@ -81,8 +81,8 @@
       <if test="keywords != null" >
         #{keywords,jdbcType=VARCHAR},
       </if>
-      <if test="desc != null" >
-        #{desc,jdbcType=VARCHAR},
+      <if test="desci != null" >
+        #{desci,jdbcType=VARCHAR},
       </if>
       <if test="pic != null" >
         #{pic,jdbcType=VARCHAR},
@@ -110,8 +110,8 @@
       <if test="keywords != null" >
         keywords = #{keywords,jdbcType=VARCHAR},
       </if>
-      <if test="desc != null" >
-        desc = #{desc,jdbcType=VARCHAR},
+      <if test="desci != null" >
+        desci = #{desci,jdbcType=VARCHAR},
       </if>
       <if test="pic != null" >
         pic = #{pic,jdbcType=VARCHAR},
@@ -135,7 +135,7 @@
     update article
     set title = #{title,jdbcType=VARCHAR},
       keywords = #{keywords,jdbcType=VARCHAR},
-      desc = #{desc,jdbcType=VARCHAR},
+      desci = #{desci,jdbcType=VARCHAR},
       pic = #{pic,jdbcType=VARCHAR},
       click = #{click,jdbcType=INTEGER},
       time = #{time,jdbcType=TIMESTAMP},
@@ -147,7 +147,7 @@
     update article
     set title = #{title,jdbcType=VARCHAR},
       keywords = #{keywords,jdbcType=VARCHAR},
-      desc = #{desc,jdbcType=VARCHAR},
+      desci = #{desci,jdbcType=VARCHAR},
       pic = #{pic,jdbcType=VARCHAR},
       click = #{click,jdbcType=INTEGER},
       time = #{time,jdbcType=TIMESTAMP},

@@ -8,13 +8,13 @@
     <result column="type" property="type" jdbcType="BIT" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.blog.domain.Catalog" extends="BaseResultMap" >
-    <result column="desc" property="desc" jdbcType="LONGVARCHAR" />
+    <result column="desci" property="desci" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, name, keywords, type
   </sql>
   <sql id="Blob_Column_List" >
-    desc
+    desci
   </sql>
   <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
     select 
@@ -30,9 +30,9 @@
   </delete>
   <insert id="insert" parameterType="com.blog.domain.Catalog" >
     insert into catalog (id, name, keywords, 
-      type, desc)
+      type, desci)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{keywords,jdbcType=VARCHAR}, 
-      #{type,jdbcType=BIT}, #{desc,jdbcType=LONGVARCHAR})
+      #{type,jdbcType=BIT}, #{desci,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.blog.domain.Catalog" >
     insert into catalog
@@ -49,8 +49,8 @@
       <if test="type != null" >
         type,
       </if>
-      <if test="desc != null" >
-        desc,
+      <if test="desci != null" >
+        desci,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -66,8 +66,8 @@
       <if test="type != null" >
         #{type,jdbcType=BIT},
       </if>
-      <if test="desc != null" >
-        #{desc,jdbcType=LONGVARCHAR},
+      <if test="desci != null" >
+        #{desci,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -83,8 +83,8 @@
       <if test="type != null" >
         type = #{type,jdbcType=BIT},
       </if>
-      <if test="desc != null" >
-        desc = #{desc,jdbcType=LONGVARCHAR},
+      <if test="desci != null" >
+        desci = #{desci,jdbcType=LONGVARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -94,7 +94,7 @@
     set name = #{name,jdbcType=VARCHAR},
       keywords = #{keywords,jdbcType=VARCHAR},
       type = #{type,jdbcType=BIT},
-      desc = #{desc,jdbcType=LONGVARCHAR}
+      desci = #{desci,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.blog.domain.Catalog" >
