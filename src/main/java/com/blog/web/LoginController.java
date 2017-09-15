@@ -13,21 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 public class LoginController {
     @Autowired
     AdminServiceImpl adminService;
-    @RequestMapping("/")
-    public String index(){
-        return "index";
-    }
-    @RequestMapping("/login")
-    public ModelAndView login(HttpServletRequest request){
-        Integer id=Integer.parseInt(request.getParameter("id"));
-        Admin admin=adminService.getById(id);
-        ModelAndView modelAndView=new ModelAndView("main");
-        modelAndView.addObject("admin",admin);
-        return modelAndView;
-    }
-    @RequestMapping("/main")
-    public String main(){
-        return "main";
-    }
+
+
 
 }
