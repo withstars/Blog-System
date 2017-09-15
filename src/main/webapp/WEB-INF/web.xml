@@ -5,10 +5,10 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-    <!-- Spring和mybatis的配置文件 -->
+    <!-- Spring配置文件 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring-mybatis.xml</param-value>
+        <param-value>classpath:spring/spring-*.xml</param-value>
     </context-param>
     <!--.负责启动spring容器的监听器，它将引用1处的上下文参数获得spring配置文件的地址 -->
     <listener>

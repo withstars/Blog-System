@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd ">
     <!-- 扫描web包，应用Spring的注解 -->
-    <context:component-scan base-package="com.blog.controller"/>
+    <context:component-scan base-package="com.blog.web"/>
 
     <!-- 配置视图解析器，将ModelAndView及字符串解析为具体的页面 -->
     <bean
