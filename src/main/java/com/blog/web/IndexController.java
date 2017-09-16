@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class IndexController {
@@ -16,9 +18,22 @@ public class IndexController {
     @RequestMapping("/")
     public ModelAndView index(){
         ModelAndView modelAndView =new ModelAndView("index");
-        Integer id=90;
+        List<Article> articles=articleService.queryAll(2,2);
+        modelAndView.addObject("articles",articles);
+        return modelAndView;
+    }
+
+    @RequestMapping("/article")
+    public ModelAndView detail(HttpServletRequest request){
+        int id=Integer.parseInt(request.getParameter("id"));
         Article article=articleService.selectById(id);
+        ModelAndView modelAndView=new ModelAndView("detail");
         modelAndView.addObject("article",article);
         return modelAndView;
+    }
+
+    @RequestMapping("/about")
+    public String about(){
+        return "about";
     }
 }

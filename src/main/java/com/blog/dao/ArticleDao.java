@@ -1,7 +1,10 @@
 package com.blog.dao;
 
 import com.blog.domain.Article;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public interface ArticleDao {
@@ -18,4 +21,6 @@ public interface ArticleDao {
     int updateByPrimaryKeyWithBLOBs(Article record);
 
     int updateByPrimaryKey(Article record);
+
+    List<Article> queryAll(@Param("offset") int offset,@Param("limit") int limit);
 }

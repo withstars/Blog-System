@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ArticleServiceImpl implements ArticleService{
@@ -16,5 +17,9 @@ public class ArticleServiceImpl implements ArticleService{
 
     public Article selectById(Integer id) {
         return articleDao.selectByPrimaryKey(id);
+    }
+
+    public List<Article> queryAll(int start, int pageNum) {
+        return articleDao.queryAll(start,pageNum);
     }
 }
