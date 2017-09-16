@@ -121,7 +121,7 @@
                             <maxIdleTime>60000</maxIdleTime>
                         </connector>
                     </connectors>
-                    <contextPath>/iblog</contextPath>
+                    <contextPath>/</contextPath>
                     <scanIntervalSeconds>0</scanIntervalSeconds>
                 </configuration>
             </plugin>
