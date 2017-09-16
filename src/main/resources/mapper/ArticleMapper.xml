@@ -28,10 +28,20 @@
     from article
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="queryAll" resultMap="BaseResultMap"  >
+    select *
+    from article
+    ORDER BY id DESC
+    LIMIT #{offset}, #{limit}
+  </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from article
     where id = #{id,jdbcType=INTEGER}
   </delete>
+
   <insert id="insert" parameterType="com.blog.domain.Article" >
     insert into article (id, title, keywords, 
       desci, pic, click, time,
