@@ -267,22 +267,31 @@
         </p>
     </div>
     <div id="container">
-<c:forEach items="${articles}" var="article">
-    <article class="article">
-        <time>${article.time}</time>
-        <h2 class="title"><a href="article?id=${article.id}">${article.title}</a></h2>
-        <span><i>${article.keywords}</i></span>
-        <section class="article-content markdown-body">
-            <blockquote>
-                <p>${article.desci}</p>
-            </blockquote>
-            ......
-        </section>
-        <footer>
-            <a href="article?id=${article.id}">阅读全文</a>
-        </footer>
-    </article>
-</c:forEach>
+<article class="article">
+            <time id="time1">${article.time}</time>
+            <h2 style="text-align: center; ">${article.title}</h2>
+            <section>
+                <blockquote>
+                    <p>${article.desci}</p>
+                </blockquote>
+                <p id="zhengwen">
+                    ${article.content}
+                </p>
+                <p style="text-align:center;color:#ccc;font-size:12px;margin-top:40px;">
+                    希望你今年过得比去年好一点
+                    <br>
+                    是因为有我
+                </p>
+                <p style="margin: 5em 0 1em;text-align: center;color: #83b8ec;font-size: .8em">
+                    <span>Have a nice day :)</span>
+                </p>
+            </section>
+        </article>
+    </div>
+    <div style="position: relative;;left: 80%">
+        <div ><a href=""><h4><span class="label label-primary">上一篇</span></h4></a></div>
+        <div><a href=""><h4><span class="label label-success">下一篇</span></h4></a></div>
+    </div>
     </div>
 
     <footer id="footer">

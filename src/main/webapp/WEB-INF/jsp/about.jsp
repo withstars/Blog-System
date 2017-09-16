@@ -267,31 +267,29 @@
         </p>
     </div>
     <div id="container">
-<c:forEach items="${articles}" var="article">
-    <article class="article">
-        <time>${article.time}</time>
-        <h2 class="title"><a href="article?id=${article.id}">${article.title}</a></h2>
-        <span><i>${article.keywords}</i></span>
-        <section class="article-content markdown-body">
-            <blockquote>
-                <p>${article.desci}</p>
-            </blockquote>
-            ......
-        </section>
-        <footer>
-            <a href="article?id=${article.id}">阅读全文</a>
-        </footer>
-    </article>
-</c:forEach>
-    </div>
-
-    <footer id="footer">
-        <section id="copyright">
-            <p style="font-size: 20px">
-                © 2017 <a href="/">星·光</a>
+        <article class="article">
+            <p>
+                <br><br><br><br>
+            <h3>Today is a nice day,so is tomorrow.</h3>
+            <br><br>
+            <h2>邮箱:<a href="mailto:withstars@126.com">withstars@126.com</a></h2>
+            <br><br><br><br>
             </p>
-        </section>
-    </footer>
+        </article>
+    </div>
+    <div style="position: relative;;left: 80%">
+        <div ><a href=""><h4><span class="label label-primary">上一篇</span></h4></a></div>
+        <div><a href=""><h4><span class="label label-success">下一篇</span></h4></a></div>
+    </div>
+</div>
+
+<footer id="footer">
+    <section id="copyright">
+        <p style="font-size: 20px">
+            © 2017 <a href="/">星·光</a>
+        </p>
+    </section>
+</footer>
 
 </div>
 </div>
