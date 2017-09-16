@@ -18,7 +18,7 @@ public class IndexController {
     @RequestMapping("/")
     public ModelAndView index(){
         ModelAndView modelAndView =new ModelAndView("index");
-        List<Article> articles=articleService.queryAll(2,2);
+        List<Article> articles=articleService.queryAll(0,3);
         modelAndView.addObject("articles",articles);
         return modelAndView;
     }
