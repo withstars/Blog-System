@@ -1,5 +1,6 @@
 package com.blog.domain;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Comment {
@@ -31,8 +32,11 @@ public class Comment {
         this.articleId = articleId;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDate() {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy.MM.dd HH:mm");//设置日期格式
+        String dates = df.format(date);
+        return dates;
+
     }
 
     public void setDate(Date date) {
