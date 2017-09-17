@@ -39,4 +39,13 @@ public class ArticleController {
         return modelAndView;
     }
 
+    @RequestMapping("/admin/article-list")
+    public ModelAndView articleList(){
+        List<Article> articles=articleService.queryAll(0,10);
+        Integer articleCount=articleService.countAllNum();
+        ModelAndView modelAndView=new ModelAndView("/admin/article-list");
+        modelAndView.addObject("articles",articles);
+        modelAndView.addObject("articleCount",articleCount);
+        return modelAndView;
+    }
 }
