@@ -20,11 +20,9 @@
   <sql id="Blob_Column_List" >
     content
   </sql>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
+    *
     from article
     where id = #{id,jdbcType=INTEGER}
   </select>
@@ -36,6 +34,11 @@
     LIMIT #{offset}, #{limit}
   </select>
 
+  <select id="countAllNum" resultType="java.lang.Integer">
+    SELECT count(*)
+    FROM
+    article
+  </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from article

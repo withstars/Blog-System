@@ -17,6 +17,16 @@
   <sql id="Blob_Column_List" >
     content
   </sql>
+
+  <select id="queryAll" resultMap="ResultMapWithBLOBs"  >
+    select *
+    from comment
+    where article_id = #{article_id}
+    ORDER BY id DESC
+    LIMIT #{offset}, #{limit}
+  </select>
+
+
   <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
