@@ -6,7 +6,9 @@
     <meta charset="UTF-8">
     <title>星·光</title>
     <link rel="shortcut icon" type="image/x-icon" href="http://ombs76e55.bkt.clouddn.com/web-icon.png" media="screen" />
-
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
 
         *{
@@ -266,7 +268,8 @@
             <i>岁月易逝 一滴不剩</i>
         </p>
     </div>
-    <div id="container">
+</div>
+<div id="container">
 <c:forEach items="${articles}" var="article">
     <article class="article">
         <time>${article.time}</time>
@@ -283,8 +286,18 @@
         </footer>
     </article>
 </c:forEach>
-    </div>
-
+        <div style="text-align: center">
+            <ul class="pagination" >
+                <li><a href="#">&laquo;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li class="disabled"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+        </div>
+</div>
     <footer id="footer">
         <section id="copyright">
             <p style="font-size: 20px">
@@ -292,8 +305,5 @@
             </p>
         </section>
     </footer>
-
-</div>
-</div>
 </body>
 </html>

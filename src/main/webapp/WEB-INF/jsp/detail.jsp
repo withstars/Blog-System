@@ -1,12 +1,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>星·光</title>
     <link rel="shortcut icon" type="image/x-icon" href="http://ombs76e55.bkt.clouddn.com/web-icon.png" media="screen" />
-
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
 
         *{
@@ -234,7 +237,15 @@
         #pagebar{
             text-align: center;
         }
-
+        .comment{
+        width:60%;
+        position:relative;
+        left:20%;
+        border:1px solid #18bc9c;
+        text-align:center;
+        margin:9px;
+        background-color:#fff;
+        }
 
     </style>
 </head>
@@ -288,6 +299,86 @@
             </section>
         </article>
     </div>
+    <c:forEach items="${comments}" var="comment">
+
+
+        <article class="comment">
+                <section style="text-align:left">
+                        <p>${comment.content}</p>
+                </section>
+                <p style="text-align:right">${comment.date}&nbsp;&nbsp;By&nbsp;${comment.name}</p>
+            </article>
+    </c:forEach>
+    		<div class="form-horizontal" role="form" style="margin:10px">
+    			<div class="form-group">
+                        <label for="inputPassword" class="col-sm-2 control-label">评论</label>
+                        <div class="col-sm-3">
+                               <textarea id="content"  class="form-control" rows="3"  placeholder="文明上网，理性发言" ></textarea>
+                         </div>
+                 </div>
+        <input id="articleId" type="hidden" value="${article.id}" >
+    					<div class="form-group">
+                    		<label for="inputPassword" class="col-sm-2 control-label">昵称</label>
+
+                    		<div class="col-sm-3">
+                    			<input type="text" id="name" class="form-control" id="inputPassword"
+                    				   placeholder="昵称">
+                    		</div>
+                    	</div>
+                    	<div class="form-group">
+                               <label for="inputPassword" class="col-sm-2 control-label">邮箱</label>
+                                <div class="col-sm-3">
+                                  <input type="email" id="email" class="form-control" id="inputPassword" placeholder="邮箱">
+                                </div>
+                        </div>
+                        <div class="form-group" style="position:relative;left:13%">
+     <br/>
+        <p style="text-align: right;color: red;position: absolute" id="info"></p>
+        <br/>
+     <button id="commentButton" class="btn btn-default" type="submit">提交</button>
+                                                </div>
+
+    			</div>
+    			 <script>
+
+                        $("#commentButton").click(function () {
+                            if($("#content").val()==''&&$("#name").val()==''&&$("#email").val()==''){
+                                $("#info").text("提示:请输入评论内容,昵称和邮箱");
+                            }
+                            else if ($("#content").val()==''){
+                                $("#info").text("提示:请输入评论内容");
+                            }
+                            else if($("#name").val()==''){
+                                $("#info").text("提示:请输入昵称");
+                            }
+                            else if($("#email").val()==''){
+                                $("#info").text("提示:请输入邮箱");
+                            }
+                            else {
+                             $("#info").text("");
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/api/comment/add",
+                                    data: {
+                                        content: $("#content").val() ,
+                                        name: $("#name").val(),
+                                        email: $("#email").val(),
+                                        articleId:$("#articleId").val(),
+                                    },
+                                    dataType: "json",
+                                    success: function(data) {
+                                        if(data.stateCode.trim() == "1") {
+                                            $("#info").text("评论成功,跳转中...");
+                                            window.location.reload();
+                                        } else  {
+                                            $("#info").text("评论失败...");
+                                        }
+                                    }
+                                });
+                            }
+                        })
+
+                    </script>
     <div style="position: relative;;left: 80%">
         <div ><a href=""><h4><span class="label label-primary">上一篇</span></h4></a></div>
         <div><a href=""><h4><span class="label label-success">下一篇</span></h4></a></div>

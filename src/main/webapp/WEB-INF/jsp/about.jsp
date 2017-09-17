@@ -272,7 +272,7 @@
                 <br><br><br><br>
             <h3>写够一天代码，我就回家。</h3>
             <br><br>
-            <h2>邮箱:<a href="mailto:withstars@126.com">withstars@126.com</a></h2>
+            <h3>邮箱:<a href="mailto:withstars@126.com">withstars@126.com</a></h3>
             <br><br><br><br>
             </p>
         </article>
