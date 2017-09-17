@@ -22,5 +22,7 @@ public interface ArticleDao {
 
     int updateByPrimaryKey(Article record);
 
+    int countAllNum();
+
     List<Article> queryAll(@Param("offset") int offset,@Param("limit") int limit);
 }
