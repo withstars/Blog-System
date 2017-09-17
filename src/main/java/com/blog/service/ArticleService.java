@@ -8,4 +8,6 @@ import java.util.List;
 public interface ArticleService {
 Article selectById (Integer id);
 List<Article> queryAll(int start,int pageNum);
+int countAllNum();
+int updateArticle(Article article);
 }

@@ -22,4 +22,12 @@ public class ArticleServiceImpl implements ArticleService{
     public List<Article> queryAll(int start, int pageNum) {
         return articleDao.queryAll(start,pageNum);
     }
+
+    public int countAllNum() {
+        return articleDao.countAllNum();
+    }
+
+    public int updateArticle(Article article) {
+        return articleDao.updateByPrimaryKey(article);
+    }
 }
