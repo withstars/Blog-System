@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -38,7 +39,15 @@ public class ArticleController {
         modelAndView.addObject("comments",comments);
         return modelAndView;
     }
+    @RequestMapping("/admin/article/detail")
+    public ModelAndView adminArticleDetail(HttpServletRequest request){
+        int id=Integer.parseInt(request.getParameter("id"));
+        Article article=articleService.selectById(id);
+        ModelAndView modelAndView=new ModelAndView("/admin/article-list");
+        modelAndView.addObject("article",article);
 
+        return modelAndView;
+    }
     @RequestMapping("/admin/article-list")
     public ModelAndView articleList(){
         List<Article> articles=articleService.queryAll(0,10);
@@ -47,5 +56,20 @@ public class ArticleController {
         modelAndView.addObject("articles",articles);
         modelAndView.addObject("articleCount",articleCount);
         return modelAndView;
+    }
+    @RequestMapping("/admin/article/add")
+    public ModelAndView articleAdd(){
+        ModelAndView modelAndView=new ModelAndView("/admin/article_add");
+
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/api/article/del", method = RequestMethod.POST)
+    public @ResponseBody Object loginCheck(HttpServletRequest request) {
+        int id=Integer.parseInt(request.getParameter("id"));
+        HashMap<String, String> res = new HashMap<String, String>();
+        res.put("stateCode", "1");
+        res.put("message", "删除成功");
+        return res;
     }
 }

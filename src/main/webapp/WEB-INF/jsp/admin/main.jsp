@@ -32,8 +32,7 @@
 <body>
 <header class="navbar-wrapper">
     <div class="navbar navbar-fixed-top">
-        <div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="/aboutHui.shtml">星·光 博客管理系统</a> <a class="logo navbar-logo-m f-l mr-10 visible-xs" href="">H-ui</a>
-            <span class="logo navbar-slogan f-l mr-10 hidden-xs">v1.0</span>
+        <div class="container-fluid cl"> <a class="logo navbar-logo f-l mr-10 hidden-xs" href="#">星·光 博客管理系统</a>
             <a aria-hidden="false" class="nav-toggle Hui-iconfont visible-xs" href="javascript:;">&#xe667;</a>
             <nav class="nav navbar-nav">
                 <ul class="cl">
