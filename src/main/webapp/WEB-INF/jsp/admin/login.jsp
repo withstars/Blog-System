@@ -3,7 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>星·光 博客管理系统</title>
+    <title>博客管理系统</title>
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -46,7 +46,7 @@
         window.location.href="login.html";
     </script>
 </c:if>
-<h2 style="text-align: center;font-family: 'Adobe 楷体 Std R';color: black">星·光 博客管理系统</h2>
+<h2 style="text-align: center;font-family: 'Adobe 楷体 Std R';color: black">博客管理系统</h2>
 <div style="float:right;" id="github_iframe"></div>
 <script>
     /**
@@ -192,6 +192,7 @@
 </div>
 <div  id="login">
     <div class="form-inline"  >
+
         <div class="input-group">
             <span class="input-group-addon">账号</span>
             <input type="text" class="form-control" name="id" id="adminId">
@@ -202,16 +203,17 @@
         </div>
         <br/>
         <p style="text-align: right;color: red;position: absolute" id="info"></p>
+
         <br/>
-        <button id="loginButton"  class="btn btn-default">登陆
+        <button id="loginButton"  class="btn btn-primary">登陆
         </button>
 
     </div>
     <script>
 
-        $("#readerId").keyup(
+        $("#adminId").keyup(
             function () {
-                if(isNaN($("#readerId").val())){
+                if(isNaN($("#adminId").val())){
                     $("#info").text("提示:账号只能为数字");
                 }
                 else {
