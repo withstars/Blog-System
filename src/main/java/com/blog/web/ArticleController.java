@@ -43,16 +43,16 @@ public class ArticleController {
     public ModelAndView adminArticleDetail(HttpServletRequest request){
         int id=Integer.parseInt(request.getParameter("id"));
         Article article=articleService.selectById(id);
-        ModelAndView modelAndView=new ModelAndView("/admin/article-list");
+        ModelAndView modelAndView=new ModelAndView("/admin/article_detail");
         modelAndView.addObject("article",article);
 
         return modelAndView;
     }
-    @RequestMapping("/admin/article-list")
+    @RequestMapping("/admin/article_list")
     public ModelAndView articleList(){
         List<Article> articles=articleService.queryAll(0,10);
         Integer articleCount=articleService.countAllNum();
-        ModelAndView modelAndView=new ModelAndView("/admin/article-list");
+        ModelAndView modelAndView=new ModelAndView("/admin/article_list");
         modelAndView.addObject("articles",articles);
         modelAndView.addObject("articleCount",articleCount);
         return modelAndView;
