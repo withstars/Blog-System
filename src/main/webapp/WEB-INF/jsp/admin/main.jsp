@@ -64,7 +64,7 @@
     <table class="table table-hover">
         <p class="text-success" style="text-align: center"> 系统统计</p>
         <thead>
-        <tr>
+        <tr >
             <th>#</th>
             <th>文章数</th>
             <th>评论数</th>
@@ -72,25 +72,25 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
+        <tr class="table-success">
             <th scope="row">全部</th>
             <td>87</td>
             <td>85</td>
             <td>58</td>
         </tr>
-        <tr>
+        <tr class="table-danger">
             <th scope="row">今日</th>
             <td>4</td>
             <td>5</td>
             <td>8</td>
         </tr>
-        <tr>
+        <tr class="table-warning">
             <th scope="row">本周</th>
             <td >21</td>
             <td>13</td>
             <td>13</td>
         </tr>
-        <tr>
+        <tr class="table-info">
             <th scope="row">本月</th>
             <td>12</td>
             <td>53</td>
