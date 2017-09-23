@@ -52,9 +52,9 @@
 <br/>
 <table class="table table-sm">
     <thead>
-    <tr>
+    <tr class="table-info">
         <th>id</th>
-        <th>标题</th>
+        <th width="25%">标题</th>
         <th>发表时间</th>
         <th>点击量</th>
         <th>详情</th>
@@ -70,7 +70,7 @@
         <td>${article.click}</td>
         <th><button type="button" class="btn btn-outline-info btn-sm" onclick="fullScreen('${article.title}','/admin/article/detail?id=${article.id}')">详情</button></th>
         <th>
-            <button type="button" class="btn btn-outline-warning btn-sm" onclick="fullScreen('${article.title}'),'/admin/article/edit?id=${article.id}'">编辑</button>
+            <button type="button" class="btn btn-outline-warning btn-sm" onclick="fullScreen('${article.title}'),'/admin/article/edit?id=${article.id}'">编辑</button>&nbsp;&nbsp;
             <button type="button" class="btn btn-outline-danger btn-sm" onclick="ifdelete('${article.id}','${article.title}') ">删除</button>
         </th>
     </tr>
@@ -90,6 +90,7 @@
         </li>
     </ul>
 </nav>
+<script src="/js/jquery-3.2.1.min.js"></script>
 <script>
     function fullScreen(title,url){
         var index = layer.open({
@@ -101,11 +102,29 @@
         });
         layer.full(index);
     }
+
     function ifdelete(id,title) {
         layer.confirm('确定删除该文章吗?', {
             btn: ['确定','取消'] //按钮
         }, function(){
-            layer.msg('删除成功', {icon: 1});
+            $.ajax({
+                type: 'POST',
+                url: '/api/article/del',
+                datatype:'json',
+                data:{"id":id},
+                success: function(data){
+                    if(data['stateCode']==1){
+                        layer.msg('删除成功!',{icon:1,time:1000});
+                        setTimeout("window.location.reload()",1000);
+                    }
+                    else {
+                        layer.msg('删除失败!',{icon:5,time:1000});
+                    }
+                },
+                error:function(data) {
+                    console.log('错误...');
+                },
+            });
         }, function(){
 
         });
