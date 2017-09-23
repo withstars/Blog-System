@@ -3,6 +3,8 @@ package com.blog.dao;
 import com.blog.domain.AdminLoginLog;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface AdminLoginLogDao {
     int deleteByPrimaryKey(Long id);
@@ -16,4 +18,8 @@ public interface AdminLoginLogDao {
     int updateByPrimaryKeySelective(AdminLoginLog record);
 
     int updateByPrimaryKey(AdminLoginLog record);
-}
+
+    List<AdminLoginLog> queryAll();
+
+    AdminLoginLog selectRencent(Integer adminId);
+    }
