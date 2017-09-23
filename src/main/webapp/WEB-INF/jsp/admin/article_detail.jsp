@@ -25,7 +25,7 @@
     </tr>
     <tr>
         <th>发表时间</th>
-        <td>${article.time}</td>
+        <td>${article.localTime}</td>
     </tr>
     <tr>
         <th>点击量</th>

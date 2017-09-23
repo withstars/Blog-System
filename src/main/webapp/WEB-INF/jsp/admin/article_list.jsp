@@ -18,20 +18,30 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#">博客管理</a>
+    <a class="navbar-brand text-success" href="/admin/main">博客管理</a>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
+            <li class="nav-item">
+                <!-- Example single danger button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        新建
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="javascript:void(0);" onclick="fullScreen('添加文章','/admin/article/add')">文章</a>
+                        <a class="dropdown-item" href="#">评论</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item ">
                 <a class="nav-link" href="/admin/main">主页 <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/admin/article_list">文章管理</a>
 
             </li>
-            <li class="nav-item">
-                <a class="nav-link " href="#">评论管理</a>
-            </li>
+
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -56,10 +66,13 @@
     <tr>
         <th scope="row">${article.id}</th>
         <td>${article.title}</td>
-        <td>${article.time}</td>
+        <td>${article.localTime}</td>
         <td>${article.click}</td>
-        <th><button type="button" class="btn btn-outline-info btn-sm" onclick="aiticle_detail('${article.title} | 文章详情','/admin/article/detail?id=${article.id}')">详情</button></th>
-        <th>操作</th>
+        <th><button type="button" class="btn btn-outline-info btn-sm" onclick="fullScreen('${article.title}','/admin/article/detail?id=${article.id}')">详情</button></th>
+        <th>
+            <button type="button" class="btn btn-outline-warning btn-sm" onclick="fullScreen('${article.title}'),'/admin/article/edit?id=${article.id}'">编辑</button>
+            <button type="button" class="btn btn-outline-danger btn-sm" onclick="ifdelete('${article.id}','${article.title}') ">删除</button>
+        </th>
     </tr>
     </c:forEach>
     </tbody>
@@ -78,16 +91,26 @@
     </ul>
 </nav>
 <script>
-    function aiticle_detail(title,url){
-        layer.open({
+    function fullScreen(title,url){
+        var index = layer.open({
             type: 2,
             title: title,
-            shadeClose: true,
-            shade: 0.8,
             area: ['70%', '70%'],
-            content: url
+            content: url,
+            maxmin: true
+        });
+        layer.full(index);
+    }
+    function ifdelete(id,title) {
+        layer.confirm('确定删除该文章吗?', {
+            btn: ['确定','取消'] //按钮
+        }, function(){
+            layer.msg('删除成功', {icon: 1});
+        }, function(){
+
         });
     }
+
 </script>
 </body>
 </html>

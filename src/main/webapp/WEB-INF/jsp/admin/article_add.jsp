@@ -11,32 +11,46 @@
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/ueditor.config.js"></script>
+    <script type="text/javascript" src="/js/ueditor.all.min.js"> </script>
+    <script type="text/javascript"  src="/js/zh-cn.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" >
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">博客管理</a>
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="title">文章标题</label>
+            <input type="text" class="form-control" id="title" placeholder="文章标题...">
+        </div>
+        <div class="form-group">
+            <label for="cate">栏目</label>
+            <select class="form-control" id="cate">
+                <option>学习</option>
+                <option>生活</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="keywords">关键字</label>
+            <input type="text" class="form-control" id="keywords" placeholder="关键字...">
+        </div>
+        <div class="form-group">
+            <label for="desci">简介</label>
+            <textarea class="form-control" id="desci" rows="3" placeholder="简介..."></textarea>
+        </div>
+        <div class="form-group">
+            <label for="content">内容</label>
+            <textarea class="form-control" id="content" rows="3"style="max-width: 100%;max-height: 100%;" ></textarea>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="/admin/main">主页 <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/article_list">文章管理</a>
+        </div>
+        <script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
+    </form>
+    <script>
+        $(function(){
 
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="#">评论管理</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
-        </form>
-    </div>
-</nav>
+            var ue = UE.getEditor('editor');
+
+        });
+    </script>
+</div>
 </body>
 </html>
