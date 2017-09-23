@@ -67,9 +67,14 @@ public class ArticleController {
     @RequestMapping(value = "/api/article/del", method = RequestMethod.POST)
     public @ResponseBody Object loginCheck(HttpServletRequest request) {
         int id=Integer.parseInt(request.getParameter("id"));
+        int result=articleService.deleteById(id);
+        System.out.print(result);
         HashMap<String, String> res = new HashMap<String, String>();
-        res.put("stateCode", "1");
-        res.put("message", "删除成功");
+        if (result==1){
+            res.put("stateCode", "1");
+        }else {
+            res.put("stateCode", "0");
+        }
         return res;
     }
 }
