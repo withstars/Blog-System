@@ -1,5 +1,6 @@
 package com.blog.domain;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Article {
@@ -72,6 +73,14 @@ public class Article {
     public Date getTime() {
         return time;
     }
+
+    public String getLocalTime() {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy/M/dd HH:mm");//设置日期格式
+        String date = df.format(time);
+        return date;
+
+    }
+
 
     public void setTime(Date time) {
         this.time = time;
