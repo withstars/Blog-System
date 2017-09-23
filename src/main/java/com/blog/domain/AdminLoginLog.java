@@ -1,5 +1,6 @@
 package com.blog.domain;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AdminLoginLog {
@@ -41,5 +42,12 @@ public class AdminLoginLog {
 
     public void setIp(String ip) {
         this.ip = ip == null ? null : ip.trim();
+    }
+
+    public String getLocalTime() {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy/M/dd HH:mm");//设置日期格式
+        String dates = df.format(date);
+        return dates;
+
     }
 }
