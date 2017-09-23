@@ -56,8 +56,8 @@
 
     <div class="card-body">
         <h4 class="card-title">${admin.username}</h4>
-        <p class="card-text"><small class="text-muted">上次登录时间:2016/5/5</small></p>
-        <p class="card-text"><small class="text-muted">上次登录IP:262.55.36.5</small></p>
+        <p class="card-text"><small class="text-muted">上次登录时间:${loginLog.localTime}</small></p>
+        <p class="card-text"><small class="text-muted">上次登录IP:${loginLog.ip}</small></p>
     </div>
 </div>
 <div >
