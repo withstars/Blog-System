@@ -13,11 +13,21 @@ import java.util.Date;
 public class AdminController {
 
     @RequestMapping("/main")
-    public ModelAndView toMain(){
+    public ModelAndView toMain(HttpServletRequest request){
         ModelAndView modelAndView=new ModelAndView("admin/main");
+        String hostIp=request.getRemoteAddr();    //获取远程主机地址，如：127.0.0.1
+        Date date = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm");//设置日期格式
+        String dates = df.format(date);
+        request.getSession().getAttribute("admin");
+
+
+
+        modelAndView.addObject("hostIp",hostIp);
+        modelAndView.addObject("date",dates);
         return modelAndView;
     }
-
+/*
     @RequestMapping("/welcome")
     public ModelAndView toMainWelcome(HttpServletRequest request){
         String hostIp=request.getRemoteAddr();    //获取远程主机地址，如：127.0.0.1
@@ -56,5 +66,5 @@ public class AdminController {
         modelAndView.addObject("date",dates);
         return modelAndView;
     }
-
+*/
 }
