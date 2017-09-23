@@ -30,4 +30,8 @@ public class ArticleServiceImpl implements ArticleService{
     public int updateArticle(Article article) {
         return articleDao.updateByPrimaryKey(article);
     }
+
+    public int deleteById(Integer id) {
+        return articleDao.deleteByPrimaryKey(id);
+    }
 }

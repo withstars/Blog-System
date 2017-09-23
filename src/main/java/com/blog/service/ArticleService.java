@@ -10,4 +10,5 @@ Article selectById (Integer id);
 List<Article> queryAll(int start,int pageNum);
 int countAllNum();
 int updateArticle(Article article);
+    int deleteById(Integer id);
 }
