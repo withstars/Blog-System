@@ -279,7 +279,7 @@
     </div>
     <div id="container">
 <article class="article">
-            <time id="time1">${article.time}</time>
+            <time id="time1">${article.localTime}</time>
             <h2 style="text-align: center; ">${article.title}</h2>
             <section>
                 <blockquote>

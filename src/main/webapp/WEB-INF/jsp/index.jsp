@@ -272,7 +272,7 @@
 <div id="container">
 <c:forEach items="${articles}" var="article">
     <article class="article">
-        <time>${article.time}</time>
+        <time>${article.localTime}</time>
         <h2 class="title"><a href="article?id=${article.id}">${article.title}</a></h2>
         <span><i>${article.keywords}</i></span>
         <section class="article-content markdown-body">
