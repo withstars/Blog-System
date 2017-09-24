@@ -27,6 +27,13 @@
     where id = #{id,jdbcType=INTEGER}
   </select>
 
+  <select id="selectByWord" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    *
+    from article
+    where title LIKE CONCAT(CONCAT('%', #{word}), '%') OR content  LIKE CONCAT(CONCAT('%', #{word}), '%')
+  </select>
+
   <select id="queryAll" resultMap="BaseResultMap"  >
     select *
     from article
@@ -35,9 +42,7 @@
   </select>
 
   <select id="countAllNum" resultType="java.lang.Integer">
-    SELECT count(*)
-    FROM
-    article
+    SELECT count(*) FROM article
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >

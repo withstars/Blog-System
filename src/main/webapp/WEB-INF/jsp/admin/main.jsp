@@ -43,8 +43,8 @@
             </li>
 
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" action="/admin/article/search" method="GET">
+            <input class="form-control mr-sm-2" type="search" placeholder="文章标题或内容..." aria-label="Search" name="word">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
         </form>
     </div>
@@ -58,6 +58,7 @@
         <h4 class="card-title">${admin.username}</h4>
         <p class="card-text"><small class="text-muted">上次登录时间:${loginLog.localTime}</small></p>
         <p class="card-text"><small class="text-muted">上次登录IP:${loginLog.ip}</small></p>
+        <p class="card-text"><small class="text-muted">本次登录IP:${clientIp}</small></p>
     </div>
 </div>
 <div >
@@ -74,27 +75,27 @@
         <tbody>
         <tr class="table-success">
             <th scope="row">全部</th>
-            <td>87</td>
-            <td>85</td>
+            <td>${articleCount}</td>
+            <td>${commentCount}</td>
             <td>58</td>
         </tr>
         <tr class="table-danger">
             <th scope="row">今日</th>
-            <td>4</td>
-            <td>5</td>
-            <td>8</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
         </tr>
         <tr class="table-warning">
             <th scope="row">本周</th>
-            <td >21</td>
-            <td>13</td>
-            <td>13</td>
+            <td >0</td>
+            <td>0</td>
+            <td>0</td>
         </tr>
         <tr class="table-info">
             <th scope="row">本月</th>
-            <td>12</td>
-            <td>53</td>
-            <td>53</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
         </tr>
         </tbody>
     </table>
@@ -105,8 +106,12 @@
         <p class="text-success" style="text-align: center"> 系统信息</p>
 
         <tr>
-            <th scope="row">服务器ip</th>
+            <th scope="row">服务器IP</th>
             <td>${hostIp}</td>
+        </tr>
+        <tr>
+            <th scope="row">服务器端口</th>
+            <td>${hostPort}</td>
         </tr>
         <tr>
             <th scope="row">服务器时间</th>

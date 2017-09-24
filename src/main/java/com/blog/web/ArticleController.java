@@ -63,6 +63,15 @@ public class ArticleController {
 
         return modelAndView;
     }
+    @RequestMapping(value = "/admin/article/search")
+    public ModelAndView articleSearch(HttpServletRequest request){
+        String word=request.getParameter("word");
+        List<Article> articles=articleService.selectByWord(word);
+
+        ModelAndView modelAndView=new ModelAndView("/admin/article_list");
+        modelAndView.addObject("articles",articles);
+        return modelAndView;
+    }
 
     @RequestMapping(value = "/api/article/del", method = RequestMethod.POST)
     public @ResponseBody Object loginCheck(HttpServletRequest request) {
