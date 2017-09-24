@@ -34,4 +34,12 @@ public class ArticleServiceImpl implements ArticleService{
     public int deleteById(Integer id) {
         return articleDao.deleteByPrimaryKey(id);
     }
+
+    public int selectCount() {
+        return articleDao.countAllNum();
+    }
+
+    public List<Article> selectByWord(String word) {
+        return articleDao.selectByWord(word);
+    }
 }
