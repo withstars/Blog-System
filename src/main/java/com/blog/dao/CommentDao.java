@@ -23,5 +23,7 @@ public interface CommentDao {
 
     int updateByPrimaryKey(Comment record);
 
+    int countAllNum();
+
     List<Comment> queryAll(@Param("article_id") int article_id,@Param("offset") int offset, @Param("limit") int limit);
 }

@@ -26,6 +26,9 @@
     LIMIT #{offset}, #{limit}
   </select>
 
+  <select id="countAllNum" resultType="java.lang.Integer">
+    SELECT count(*) FROM comment
+  </select>
 
   <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
     select 

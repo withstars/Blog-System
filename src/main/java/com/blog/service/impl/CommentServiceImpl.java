@@ -20,4 +20,8 @@ public class CommentServiceImpl implements CommentService {
     public int insertComment(Comment comment) {
         return commentDao.insert(comment);
     }
+
+    public int countAllNum() {
+        return commentDao.countAllNum();
+    }
 }
