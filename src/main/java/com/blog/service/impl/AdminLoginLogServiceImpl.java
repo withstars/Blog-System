@@ -14,4 +14,8 @@ public class AdminLoginLogServiceImpl implements AdminLoginLogService{
     public AdminLoginLog selectRencent(Integer adminId) {
         return adminLoginLogDao.selectRencent(adminId);
     }
+
+    public int insert(AdminLoginLog adminLoginLog) {
+        return adminLoginLogDao.insert(adminLoginLog);
+    }
 }
