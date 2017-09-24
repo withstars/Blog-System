@@ -5,4 +5,6 @@ import com.blog.domain.AdminLoginLog;
 public interface AdminLoginLogService {
 
     AdminLoginLog selectRencent(Integer adminId);
+
+    int insert(AdminLoginLog adminLoginLog);
 }

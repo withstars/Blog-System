@@ -22,4 +22,6 @@ public interface AdminLoginLogDao {
     List<AdminLoginLog> queryAll();
 
     AdminLoginLog selectRencent(Integer adminId);
+
+
     }

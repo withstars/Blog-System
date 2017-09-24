@@ -30,9 +30,9 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" parameterType="com.blog.domain.AdminLoginLog" >
-    insert into admin_login_log (id, admin_id, date, 
+    insert into admin_login_log (admin_id, date,
       ip)
-    values (#{id,jdbcType=BIGINT}, #{adminId,jdbcType=INTEGER}, #{date,jdbcType=TIMESTAMP}, 
+    values ( #{adminId,jdbcType=INTEGER}, #{date,jdbcType=TIMESTAMP},
       #{ip,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.blog.domain.AdminLoginLog" >
