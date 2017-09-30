@@ -20,7 +20,6 @@ public class CommentController {
 
     @RequestMapping(value = "/api/comment/add", method = RequestMethod.POST)
     public @ResponseBody Object commentAdd(HttpServletRequest request) {
-        request.getParameter("email");
         Comment comment=new Comment();
         comment.setArticleId(Long.parseLong(request.getParameter("articleId")));
         comment.setContent(request.getParameter("content"));
@@ -29,6 +28,17 @@ public class CommentController {
         comment.setEmail(request.getParameter("email"));
         HashMap<String, String> res = new HashMap<String, String>();
         if(commentService.insertComment(comment)>0){
+            res.put("stateCode", "1");
+        }else {
+            res.put("stateCode", "0");
+        }
+        return res;
+    }
+    @RequestMapping(value = "/api/comment/del", method = RequestMethod.POST)
+    public @ResponseBody Object commentDel(HttpServletRequest request) {
+        long id=Long.parseLong(request.getParameter("id"));
+        HashMap<String, String> res = new HashMap<String, String>();
+        if (commentService.delById(id)){
             res.put("stateCode", "1");
         }else {
             res.put("stateCode", "0");

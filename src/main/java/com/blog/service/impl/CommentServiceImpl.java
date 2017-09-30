@@ -24,4 +24,8 @@ public class CommentServiceImpl implements CommentService {
     public int countAllNum() {
         return commentDao.countAllNum();
     }
+
+    public boolean delById(Long id) {
+        return commentDao.deleteByPrimaryKey(id)>0;
+    }
 }
