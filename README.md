@@ -24,3 +24,4 @@
 8. 点击Maven Projects\Blog-System\Plugins\jetty\jetty:run启动jetty服务器。<br/>
     默认端口号为8080。可在pom.xml中修改。
 9. 待服务器启动完毕后，在浏览器地址栏输入 http://localhost:8080 进入该系统。
+### 喜欢请 star
