@@ -42,4 +42,8 @@ public class ArticleServiceImpl implements ArticleService{
     public List<Article> selectByWord(String word) {
         return articleDao.selectByWord(word);
     }
+
+    public boolean insert(Article article) {
+        return articleDao.insert(article)>0;
+    }
 }

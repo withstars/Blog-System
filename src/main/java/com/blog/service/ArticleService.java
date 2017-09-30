@@ -13,4 +13,5 @@ int updateArticle(Article article);
 int deleteById(Integer id);
 int selectCount();
 List<Article> selectByWord(String word);
+boolean insert(Article article);
 }

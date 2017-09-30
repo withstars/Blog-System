@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -48,6 +50,14 @@ public class ArticleController {
 
         return modelAndView;
     }
+    @RequestMapping("/admin/article/comment")
+    public ModelAndView adminArticleComment(HttpServletRequest request){
+        int id=Integer.parseInt(request.getParameter("id"));
+        List<Comment> comments=commentService.allComments(id,0,10);
+        ModelAndView modelAndView=new ModelAndView("/admin/comment_list");
+        modelAndView.addObject("comments",comments);
+        return modelAndView;
+    }
     @RequestMapping("/admin/article_list")
     public ModelAndView articleList(){
         List<Article> articles=articleService.queryAll(0,10);
@@ -63,6 +73,23 @@ public class ArticleController {
 
         return modelAndView;
     }
+    @RequestMapping("/admin/article/add/do")
+    public String articleAddDo(HttpServletRequest request,RedirectAttributes redirectAttributes){
+        Article article=new Article();
+        article.setTitle(request.getParameter("title"));
+        article.setCatalogId(Integer.parseInt(request.getParameter("catalogId")));
+        article.setKeywords(request.getParameter("keywords"));
+        article.setdesci(request.getParameter("desci"));
+        article.setContent(request.getParameter("content"));
+        article.setTime(new Date());
+        if (articleService.insert(article)){
+            redirectAttributes.addFlashAttribute("succ", "发表文章成功！");
+            return "redirect:/admin/article/add";
+        }else {
+            redirectAttributes.addFlashAttribute("error", "发表文章失败！");
+            return "redirect:/admin/article/add";
+        }
+    }
     @RequestMapping(value = "/admin/article/search")
     public ModelAndView articleSearch(HttpServletRequest request){
         String word=request.getParameter("word");
@@ -77,7 +104,6 @@ public class ArticleController {
     public @ResponseBody Object loginCheck(HttpServletRequest request) {
         int id=Integer.parseInt(request.getParameter("id"));
         int result=articleService.deleteById(id);
-        System.out.print(result);
         HashMap<String, String> res = new HashMap<String, String>();
         if (result==1){
             res.put("stateCode", "1");

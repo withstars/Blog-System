@@ -75,7 +75,7 @@ public class Article {
     }
 
     public String getLocalTime() {
-        SimpleDateFormat df = new SimpleDateFormat("yyyy/M/dd HH:mm");//设置日期格式
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-M-dd HH:mm");//设置日期格式
         String date = df.format(time);
         return date;
 

@@ -51,11 +51,11 @@
   </delete>
 
   <insert id="insert" parameterType="com.blog.domain.Article" >
-    insert into article (id, title, keywords, 
-      desci, pic, click, time,
+    insert into article (title, keywords,
+      desci, pic, time,
       catalog_id, content)
-    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{keywords,jdbcType=VARCHAR}, 
-      #{desci,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{click,jdbcType=INTEGER}, #{time,jdbcType=TIMESTAMP},
+    values (#{title,jdbcType=VARCHAR}, #{keywords,jdbcType=VARCHAR},
+      #{desci,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP},
       #{catalogId,jdbcType=INTEGER}, #{content,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.blog.domain.Article" >
