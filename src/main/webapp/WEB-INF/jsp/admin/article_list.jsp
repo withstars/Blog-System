@@ -58,7 +58,9 @@
         <th>发表时间</th>
         <th>点击量</th>
         <th>详情</th>
-        <th>操作</th>
+        <th>查看评论</th>
+        <th>编辑</th>
+        <th>删除</th>
     </tr>
     </thead>
     <tbody>
@@ -68,11 +70,10 @@
         <td>${article.title}</td>
         <td>${article.localTime}</td>
         <td>${article.click}</td>
-        <th><button type="button" class="btn btn-outline-info btn-sm" onclick="fullScreen('${article.title}','/admin/article/detail?id=${article.id}')">详情</button></th>
-        <th>
-            <button type="button" class="btn btn-outline-warning btn-sm" onclick="fullScreen('${article.title}'),'/admin/article/edit?id=${article.id}'">编辑</button>&nbsp;&nbsp;
-            <button type="button" class="btn btn-outline-danger btn-sm" onclick="ifdelete('${article.id}','${article.title}') ">删除</button>
-        </th>
+        <td><button type="button" class="btn btn-outline-info btn-sm" onclick="fullScreen('${article.title}','/admin/article/detail?id=${article.id}')">详情</button></td>
+        <td><button type="button" class="btn btn-outline-success btn-sm" onclick="fullScreen('${article.title}|评论','/admin/article/comment?id=${article.id}')">评论</button></td>
+        <td><button type="button" class="btn btn-outline-primary btn-sm" onclick="fullScreen('${article.title}|编辑','/admin/article/edit?id=${article.id}')">编辑</button>&nbsp;&nbsp;</td>
+        <td><button type="button" class="btn btn-outline-danger btn-sm" onclick="ifdelete('${article.id}','${article.title}') ">删除</button></td>
     </tr>
     </c:forEach>
     </tbody>
@@ -80,13 +81,13 @@
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
         <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Previous</a>
+            <a class="page-link" href="#" tabindex="-1">上一页</a>
         </li>
         <li class="page-item"><a class="page-link" href="#">1</a></li>
         <li class="page-item"><a class="page-link" href="#">2</a></li>
         <li class="page-item"><a class="page-link" href="#">3</a></li>
         <li class="page-item">
-            <a class="page-link" href="#">Next</a>
+            <a class="page-link" href="#">下一页</a>
         </li>
     </ul>
 </nav>

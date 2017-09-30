@@ -241,10 +241,12 @@
         width:60%;
         position:relative;
         left:20%;
-        border:1px solid #18bc9c;
+        border:1px ;
         text-align:center;
         margin:9px;
         background-color:#fff;
+        border-radius: 5px;
+        transition: all .5s;
         }
 
     </style>
@@ -299,14 +301,15 @@
             </section>
         </article>
     </div>
+    <% int i =1;    %>
     <c:forEach items="${comments}" var="comment">
 
 
         <article class="comment">
                 <section style="text-align:left">
-                        <p>${comment.content}</p>
+                <%= i++  %>楼&nbsp;&nbsp;${comment.name}&nbsp;&nbsp;${comment.date}<br/><br/>
+                <p>${comment.content}</p><br/>
                 </section>
-                <p style="text-align:right">${comment.date}&nbsp;&nbsp;By&nbsp;${comment.name}</p>
             </article>
     </c:forEach>
     		<div class="form-horizontal" role="form" style="margin:10px">

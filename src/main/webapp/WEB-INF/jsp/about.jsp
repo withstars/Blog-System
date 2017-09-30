@@ -270,17 +270,14 @@
         <article class="article">
             <p>
                 <br><br><br><br>
-            <h3>写够一天代码，我就回家。</h3>
+            <h3>你来人间一趟，你要看看太阳</h3>
             <br><br>
             <h3>邮箱:<a href="mailto:withstars@126.com">withstars@126.com</a></h3>
             <br><br><br><br>
             </p>
         </article>
     </div>
-    <div style="position: relative;;left: 80%">
-        <div ><a href=""><h4><span class="label label-primary">上一篇</span></h4></a></div>
-        <div><a href=""><h4><span class="label label-success">下一篇</span></h4></a></div>
-    </div>
+
 </div>
 
 <footer id="footer">

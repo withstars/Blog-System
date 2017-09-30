@@ -114,7 +114,7 @@
             <td>${hostPort}</td>
         </tr>
         <tr>
-            <th scope="row">服务器时间</th>
+            <th scope="row">服务器当前时间</th>
             <td>${date}</td>
         </tr>
 
