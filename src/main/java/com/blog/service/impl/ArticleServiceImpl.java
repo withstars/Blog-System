@@ -27,8 +27,8 @@ public class ArticleServiceImpl implements ArticleService{
         return articleDao.countAllNum();
     }
 
-    public int updateArticle(Article article) {
-        return articleDao.updateByPrimaryKey(article);
+    public boolean updateArticle(Article article) {
+        return articleDao.updateByPrimaryKeySelective(article)>0;
     }
 
     public int deleteById(Integer id) {

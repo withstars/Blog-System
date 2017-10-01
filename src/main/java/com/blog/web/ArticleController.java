@@ -58,7 +58,7 @@ public class ArticleController {
         modelAndView.addObject("comments",comments);
         return modelAndView;
     }
-    @RequestMapping("/admin/article_list")
+    @RequestMapping("/admin/article/list")
     public ModelAndView articleList(){
         List<Article> articles=articleService.queryAll(0,10);
         Integer articleCount=articleService.countAllNum();
@@ -97,6 +97,32 @@ public class ArticleController {
 
         ModelAndView modelAndView=new ModelAndView("/admin/article_list");
         modelAndView.addObject("articles",articles);
+        return modelAndView;
+    }
+    @RequestMapping(value = "/admin/article/edit")
+    public ModelAndView articleEdit(HttpServletRequest request){
+        int id=Integer.parseInt(request.getParameter("id"));
+        Article article=articleService.selectById(id);
+        ModelAndView modelAndView=new ModelAndView("/admin/article_edit");
+        modelAndView.addObject("article",article);
+        return modelAndView;
+    }
+    @RequestMapping(value = "/admin/article/edit/do")
+    public ModelAndView articleEditDo(HttpServletRequest request){
+        Article article=new Article();
+        article.setId(Integer.parseInt(request.getParameter("id")));
+        article.setTitle(request.getParameter("title"));
+        article.setCatalogId(Integer.parseInt(request.getParameter("catalogId")));
+        article.setKeywords(request.getParameter("keywords"));
+        article.setdesci(request.getParameter("desci"));
+        article.setContent(request.getParameter("content"));
+        ModelAndView modelAndView=new ModelAndView("/admin/article_edit");
+        if (articleService.updateArticle(article)){
+            modelAndView.addObject("succ", "修改文章成功！");
+
+        }else {
+            modelAndView.addObject("error", "修改文章失败！");
+        }
         return modelAndView;
     }
 
