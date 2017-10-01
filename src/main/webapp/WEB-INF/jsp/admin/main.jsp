@@ -38,7 +38,7 @@
                 <a class="nav-link" href="/admin/main">主页 <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/admin/article_list">文章管理</a>
+                <a class="nav-link" href="/admin/article/list">文章管理</a>
 
             </li>
 
