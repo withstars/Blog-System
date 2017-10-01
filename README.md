@@ -9,7 +9,7 @@
 
 
 ### 说明
-> 该个人博客系统是我学习SSM框架的一个Demo,前端使用了最新的BootstrapV4,Jquery,ajax,layer弹出层插件。总之,该Demo非常适合大家用来学习SSM框架。如有问题，联系我withstars@126.com.
+> 该个人博客系统是我学习SSM框架的一个Demo,前端使用了BootstrapV4,Jquery,ajax,layer弹出层插件。总之,该Demo非常适合大家用来学习SSM框架。如有问题，联系我withstars@126.com.
 ### 如何使用
 1. *git clone https://github.com/withstars/Blog-System* <br/>
    *cd  Blog-System*<br/>
