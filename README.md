@@ -1,4 +1,4 @@
-# 个人博客(ssm框架)
+# 个人博客(SSM框架)
 ## 基于Spring+Spring MVC+Mybatis(Maven构建)
 ### 项目预览
 <img src="https://github.com/withstars/Blog-System/blob/master/preview/1.PNG">
@@ -8,8 +8,8 @@
 <img src="https://github.com/withstars/Blog-System/blob/master/preview/5.PNG">
 
 
-### 系统简介
-> 该个人博客系统是我学习SSM框架的一个Demo,前端使用了最新的BootstrapV4.总之,该Demo非常适合大家用来学习SSM框架。如有问题，联系我withstars@126.com.
+### 说明
+> 该个人博客系统是我学习SSM框架的一个Demo,前端使用了最新的BootstrapV4,Jquery,ajax,layer弹出层插件。总之,该Demo非常适合大家用来学习SSM框架。如有问题，联系我withstars@126.com.
 ### 如何使用
 1. *git clone https://github.com/withstars/Blog-System* <br/>
    *cd  Blog-System*<br/>
@@ -26,4 +26,4 @@
 9. 待服务器启动完毕后，在浏览器地址栏输入 http://localhost:8080 进入博客主页,http://localhost:8080/admin进入管理后台登陆页。
 ### 当前未完成的功能
 1. 分页
-### 觉得项目不错 请star(·-·)
+### 觉得项目不错 请 Star(·-·)
