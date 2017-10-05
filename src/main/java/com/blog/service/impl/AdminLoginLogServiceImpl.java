@@ -18,4 +18,8 @@ public class AdminLoginLogServiceImpl implements AdminLoginLogService{
     public int insert(AdminLoginLog adminLoginLog) {
         return adminLoginLogDao.insert(adminLoginLog);
     }
+
+    public int selectCountByAdminId(int adminId) {
+        return adminLoginLogDao.selectCountByAdminId(adminId);
+    }
 }

@@ -38,6 +38,7 @@ public class AdminController {
         AdminLoginLog adminLoginLog=adminLoginLogService.selectRencent(admin.getId());
         int articleCount=articleService.selectCount();
         int commentCount=commentService.countAllNum();
+        int loginNum=adminLoginLogService.selectCountByAdminId(admin.getId());
         modelAndView.addObject("clientIp",clientIp);
         modelAndView.addObject("hostIp",hostIp);
         modelAndView.addObject("hostPort",hostPort);
@@ -45,6 +46,7 @@ public class AdminController {
         modelAndView.addObject("loginLog",adminLoginLog);
         modelAndView.addObject("articleCount",articleCount);
         modelAndView.addObject("commentCount",commentCount);
+        modelAndView.addObject("loginNum",loginNum);
         return modelAndView;
     }
 

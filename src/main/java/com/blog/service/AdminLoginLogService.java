@@ -7,4 +7,6 @@ public interface AdminLoginLogService {
     AdminLoginLog selectRencent(Integer adminId);
 
     int insert(AdminLoginLog adminLoginLog);
+
+    int selectCountByAdminId(int adminId);
 }

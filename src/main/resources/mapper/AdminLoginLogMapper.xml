@@ -16,6 +16,11 @@
     from admin_login_log
     where id = #{id,jdbcType=BIGINT}
   </select>
+  <select id="selectCountByAdminId" resultType="java.lang.Integer" parameterType="java.lang.Integer" >
+    select count(*)
+    from admin_login_log
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </select>
   <select id="selectRencent" resultMap="BaseResultMap" parameterType="java.lang.Integer"  >
     select
     <include refid="Base_Column_List" />
