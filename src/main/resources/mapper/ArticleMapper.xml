@@ -38,7 +38,6 @@
     select *
     from article
     ORDER BY id DESC
-    LIMIT #{offset}, #{limit}
   </select>
 
   <select id="countAllNum" resultType="java.lang.Integer">

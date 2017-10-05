@@ -288,13 +288,11 @@
 </c:forEach>
         <div style="text-align: center">
             <ul class="pagination" >
-                <li><a href="#">&laquo;</a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li class="disabled"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&raquo;</a></li>
+                <li <c:if test="${pageInfo.pageNum==1}">class="disabled"</c:if>><a href="/?page=1">&laquo;</a></li>
+                <c:forEach begin="1" end="${pageInfo.pages}" step="1" var="pageNo">
+                    <li <c:if test="${pageInfo.pageNum==pageNo}">class="active"</c:if>><a href="/?page=${pageNo}">${pageNo}</a></li>
+                </c:forEach>
+                <li <c:if test="${pageInfo.pageNum==pageInfo.pages}">class="disabled"</c:if>><a href="/?page=${pageInfo.pages}">&raquo;</a></li>
             </ul>
         </div>
 </div>

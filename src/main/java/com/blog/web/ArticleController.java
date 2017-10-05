@@ -60,7 +60,7 @@ public class ArticleController {
     }
     @RequestMapping("/admin/article/list")
     public ModelAndView articleList(){
-        List<Article> articles=articleService.queryAll(0,10);
+        List<Article> articles=articleService.queryAll();
         Integer articleCount=articleService.countAllNum();
         ModelAndView modelAndView=new ModelAndView("/admin/article_list");
         modelAndView.addObject("articles",articles);

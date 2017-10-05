@@ -19,8 +19,8 @@ public class ArticleServiceImpl implements ArticleService{
         return articleDao.selectByPrimaryKey(id);
     }
 
-    public List<Article> queryAll(int start, int pageNum) {
-        return articleDao.queryAll(start,pageNum);
+    public List<Article> queryAll() {
+        return articleDao.queryAll();
     }
 
     public int countAllNum() {

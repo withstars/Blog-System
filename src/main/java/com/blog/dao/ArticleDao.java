@@ -25,7 +25,7 @@ public interface ArticleDao {
     int countAllNum();
 
 
-    List<Article> queryAll(@Param("offset") int offset,@Param("limit") int limit);
+    List<Article> queryAll();
 
     List<Article> selectByWord(String word);
 }

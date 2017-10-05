@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ArticleService {
 Article selectById (Integer id);
-List<Article> queryAll(int start,int pageNum);
+List<Article> queryAll();
 int countAllNum();
 boolean updateArticle(Article article);
 int deleteById(Integer id);

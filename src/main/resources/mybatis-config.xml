@@ -12,4 +12,11 @@
         <!-- 开启驼峰命名转换:Table{create_time} -> Entity{createTime} -->
         <setting name="mapUnderscoreToCamelCase" value="true" />
     </settings>
+    <plugins>
+        <!-- com.github.pagehelper为PageHelper类所在包名 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!-- 使用下面的方式配置参数，后面会有所有的参数介绍 -->
+            <property name="helperDialect" value="mysql"/>
+        </plugin>
+    </plugins>
 </configuration>
