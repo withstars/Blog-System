@@ -9,7 +9,7 @@
 
 
 ### 说明
-> 该个人博客系统是我学习SSM框架的一个Demo,前端使用了BootstrapV4,Jquery,ajax,layer弹出层插件。总之,该Demo非常适合大家用来学习SSM框架。如有问题，联系我withstars@126.com.
+> 该个人博客系统是我学习SSM框架的一个Demo,前端使用了BootstrapV4,Jquery,ajax,layer弹出层插件。后端分页使用了MyBatis插件pageHelper.总之,该Demo非常适合大家用来学习SSM框架。
 ### 如何使用
 1. *git clone https://github.com/withstars/Blog-System* <br/>
    *cd  Blog-System*<br/>
@@ -24,5 +24,4 @@
 8. 点击Maven Projects\Blog-System\Plugins\jetty\jetty:run启动jetty服务器。<br/>
     默认端口号为8080。可在pom.xml中修改。
 9. 待服务器启动完毕后，在浏览器地址栏输入 http://localhost:8080 进入博客主页,http://localhost:8080/admin进入管理后台登陆页。
-### 当前未完成的功能
-1. 分页
+### 如有问题，请联系我 withstars@126.com
