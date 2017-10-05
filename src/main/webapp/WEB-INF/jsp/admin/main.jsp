@@ -77,25 +77,7 @@
             <th scope="row">全部</th>
             <td>${articleCount}</td>
             <td>${commentCount}</td>
-            <td>58</td>
-        </tr>
-        <tr class="table-danger">
-            <th scope="row">今日</th>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        <tr class="table-warning">
-            <th scope="row">本周</th>
-            <td >0</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        <tr class="table-info">
-            <th scope="row">本月</th>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
+            <td>${loginNum}</td>
         </tr>
         </tbody>
     </table>
