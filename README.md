@@ -22,7 +22,7 @@
 9. 新建文章
 <img src="https://github.com/withstars/Blog-System/blob/master/preview/10.PNG"><br/>
 ### 说明
-该项目是我学习SSM框架的一个完整Demo.前端使用了Bootstrap-V4,Jquery,Ajax,Layer弹出层插件.后端为SSM框架,分页使用了MyBatis插件pageHelper.
+> 该项目是我学习SSM框架的一个完整Demo.前端使用了Bootstrap-V4,Jquery,Ajax,Layer弹出层插件.后端为SSM框架,分页使用了MyBatis插件pageHelper.
 ### 如何使用
 1. ①.*git clone https://github.com/withstars/Blog-System* <br/>
    ②.*cd  Blog-System*<br/>
