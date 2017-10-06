@@ -1,7 +1,6 @@
 # 个人博客项目
 ## 基于Spring+Spring MVC+Mybatis(Maven构建)
 ### 技术栈
-前端
 > Bootstrap 4
 > Jquery,Ajax
 > Layer弹出层插件
