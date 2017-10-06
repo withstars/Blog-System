@@ -1,7 +1,14 @@
 # 个人博客项目
 ## 基于Spring+Spring MVC+Mybatis(Maven构建)
-### 说明
-该项目是我学习SSM框架的一个完整Demo.前端使用了Bootstrap-V4,Jquery,Ajax,Layer弹出层插件.后端为SSM框架,分页使用了MyBatis插件pageHelper.
+### 技术栈
+前端
+> Bootstrap 4
+> Jquery,Ajax
+> Layer弹出层插件
+> Spring 4
+> Spring MVC
+> MyBatis
+> 分页使用了MyBatis插件pageHelper.
 ### 如何使用
 1. ①.*git clone https://github.com/withstars/Blog-System* <br/>
    ②.*cd  Blog-System*<br/>
@@ -17,7 +24,7 @@
     默认端口号为8080。可在pom.xml中修改。
 9. 待服务器启动完毕后，在浏览器地址栏输入 http://localhost:8080 进入博客主页,http://localhost:8080/admin进入管理后台登陆页。
 如有问题，请联系我 withstars@126.com
-### 项目预览
+### 项目截图
 1. 博客主页
 <img src="https://github.com/withstars/Blog-System/blob/master/preview/1.PNG">
 <img src="https://github.com/withstars/Blog-System/blob/master/preview/2.PNG">
