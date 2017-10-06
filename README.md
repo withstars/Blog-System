@@ -7,7 +7,7 @@
 > Spring 4
 > Spring MVC
 > MyBatis
-> 分页使用了MyBatis插件pageHelper.
+> pageHelper
 ### 如何使用
 1. ①.*git clone https://github.com/withstars/Blog-System* <br/>
    ②.*cd  Blog-System*<br/>
