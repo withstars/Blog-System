@@ -21,7 +21,7 @@
 7. 单击管理窗口的刷新按钮，等待依赖下载完毕。
 8. 点击Maven Projects\Blog-System\Plugins\jetty\jetty:run启动jetty服务器。<br/>
     默认端口号为8080。可在pom.xml中修改。
-9. 待服务器启动完毕后，在浏览器地址栏输入 http://localhost:8080 进入博客主页,http://localhost:8080/admin进入管理后台登陆页。
+9. 待服务器启动完毕后，在浏览器地址栏输入 http://localhost:8080 进入博客主页,http://localhost:8080/admin进入管理后台登陆页。<br/>
 如有问题，请联系我 withstars@126.com
 ### 项目截图
 1. 博客主页
