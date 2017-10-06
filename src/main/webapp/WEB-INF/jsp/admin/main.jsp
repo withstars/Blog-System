@@ -30,7 +30,7 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="javascript:void(0);" onclick="fullScreen('添加文章','/admin/article/add')">文章</a>
-                        <a class="dropdown-item" href="#">评论</a>
+                        <!-- <a class="dropdown-item" href="#">评论</a> -->
                     </div>
                 </div>
             </li>
