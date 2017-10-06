@@ -1,13 +1,13 @@
 # 个人博客项目
 ## 基于Spring+Spring MVC+Mybatis(Maven构建)
 ### 技术栈
-> Bootstrap 4
-> Jquery,Ajax
-> Layer弹出层插件
-> Spring 4
-> Spring MVC
-> MyBatis
-> pageHelper
+> Bootstrap 4<br/>
+> Jquery,Ajax<br/>
+> Layer弹出层插件<br/>
+> Spring 4<br/>
+> Spring MVC<br/>
+> MyBatis<br/>
+> pageHelper<br/>
 ### 如何使用
 1. ①.*git clone https://github.com/withstars/Blog-System* <br/>
    ②.*cd  Blog-System*<br/>
