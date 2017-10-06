@@ -1,6 +1,6 @@
 # 个人博客项目
-### 基于Spring+Spring MVC+Mybatis(Maven构建)
-#### 项目预览
+## 基于Spring+Spring MVC+Mybatis(Maven构建)
+### 项目预览
 1. 博客主页
 <img src="https://github.com/withstars/Blog-System/blob/master/preview/1.PNG">
 <img src="https://github.com/withstars/Blog-System/blob/master/preview/2.PNG">
@@ -21,9 +21,9 @@
 <img src="https://github.com/withstars/Blog-System/blob/master/preview/9.PNG">
 9. 新建文章
 <img src="https://github.com/withstars/Blog-System/blob/master/preview/10.PNG"><br/>
-#### 说明
+### 说明
 该项目是我学习SSM框架的一个完整Demo.前端使用了Bootstrap-V4,Jquery,Ajax,Layer弹出层插件.后端为SSM框架,分页使用了MyBatis插件pageHelper.
-#### 如何使用
+### 如何使用
 1. ①.*git clone https://github.com/withstars/Blog-System* <br/>
    ②.*cd  Blog-System*<br/>
    或<br/>
