@@ -1,6 +1,6 @@
 # 个人博客项目
 ## 基于Spring+Spring MVC+Mybatis(Maven构建)
-### 技术栈
+### 技术点
 > Bootstrap 4<br/>
 > Jquery,Ajax<br/>
 > Layer弹出层插件<br/>
