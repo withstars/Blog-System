@@ -4,6 +4,8 @@ import com.blog.domain.Article;
 import com.blog.domain.Comment;
 import com.blog.service.impl.ArticleServiceImpl;
 import com.blog.service.impl.CommentServiceImpl;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -59,12 +61,13 @@ public class ArticleController {
         return modelAndView;
     }
     @RequestMapping("/admin/article/list")
-    public ModelAndView articleList(){
+    public ModelAndView articleList(@RequestParam(required=true,defaultValue="1") Integer page, @RequestParam(required=false,defaultValue="10") Integer pageSize){
+        PageHelper.startPage(page, pageSize);
         List<Article> articles=articleService.queryAll();
-        Integer articleCount=articleService.countAllNum();
+        PageInfo<Article> pageInfo=new PageInfo<Article>(articles);
         ModelAndView modelAndView=new ModelAndView("/admin/article_list");
         modelAndView.addObject("articles",articles);
-        modelAndView.addObject("articleCount",articleCount);
+        modelAndView.addObject("pageInfo",pageInfo);
         return modelAndView;
     }
     @RequestMapping("/admin/article/add")

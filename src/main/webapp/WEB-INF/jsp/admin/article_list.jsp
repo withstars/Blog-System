@@ -30,7 +30,7 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="javascript:void(0);" onclick="fullScreen('添加文章','/admin/article/add')">文章</a>
-                        <a class="dropdown-item" href="#">评论</a>
+                        <!-- <a class="dropdown-item" href="#">评论</a>-->
                     </div>
                 </div>
             </li>
@@ -58,7 +58,7 @@
         <th>发表时间</th>
         <th>点击量</th>
         <th>详情</th>
-        <th>查看评论</th>
+        <th>评论</th>
         <th>编辑</th>
         <th>删除</th>
     </tr>
@@ -70,24 +70,24 @@
         <td>${article.title}</td>
         <td>${article.localTime}</td>
         <td>${article.click}</td>
-        <td><button type="button" class="btn btn-outline-info btn-sm" onclick="fullScreen('${article.title}','/admin/article/detail?id=${article.id}')">详情</button></td>
-        <td><button type="button" class="btn btn-outline-success btn-sm" onclick="fullScreen('${article.title}|评论','/admin/article/comment?id=${article.id}')">评论</button></td>
-        <td><button type="button" class="btn btn-outline-primary btn-sm" onclick="fullScreen('${article.title}|编辑','/admin/article/edit?id=${article.id}')">编辑</button>&nbsp;&nbsp;</td>
+        <td><button type="button" class="btn btn-outline-info btn-sm" onclick="fullScreen('《${article.title}》','/admin/article/detail?id=${article.id}')">详情</button></td>
+        <td><button type="button" class="btn btn-outline-success btn-sm" onclick="fullScreen('《${article.title}》|评论管理','/admin/article/comment?id=${article.id}')">评论</button></td>
+        <td><button type="button" class="btn btn-outline-primary btn-sm" onclick="fullScreen('《${article.title}》|编辑','/admin/article/edit?id=${article.id}')">编辑</button>&nbsp;&nbsp;</td>
         <td><button type="button" class="btn btn-outline-danger btn-sm" onclick="ifdelete('${article.id}','${article.title}') ">删除</button></td>
     </tr>
     </c:forEach>
     </tbody>
 </table>
-<nav aria-label="Page navigation example">
+<nav aria-label="Page navigation example" style="position: absolute;bottom: 10px;left: 42%">
     <ul class="pagination justify-content-center">
-        <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">上一页</a>
+        <li class="page-item  <c:if test="${pageInfo.pageNum==1}">disabled</c:if> ">
+            <a class="page-link" href="/admin/article/list?page=1" >&laquo;</a>
         </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#">下一页</a>
+        <c:forEach begin="1" end="${pageInfo.pages}" step="1" var="pageNo">
+            <li class="page-item <c:if test="${pageInfo.pageNum==pageNo}">active</c:if>"><a class="page-link" href="/admin/article/list?page=${pageNo}">${pageNo}</a></li>
+        </c:forEach>
+        <li class="page-item  <c:if test="${pageInfo.pageNum==pageInfo.pages}">disabled</c:if> ">
+            <a class="page-link" href="/admin/article/list?page=${pageInfo.pages}">&raquo;</a>
         </li>
     </ul>
 </nav>
