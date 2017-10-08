@@ -1,5 +1,6 @@
 # 个人博客项目
 ## 基于Spring+Spring MVC+Mybatis(Maven构建)
+[![Build Status](https://travis-ci.org/withstars/Blog-System.svg?branch=master)](https://travis-ci.org/withstars/Blog-System)
 ### 技术点
 > Bootstrap 4<br/>
 > Jquery,Ajax<br/>
