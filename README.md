@@ -1,14 +1,14 @@
-# 个人博客项目
-## 基于Spring+Spring MVC+Mybatis(Maven构建)
+# 个人博客系统
+#### 基于Spring+Spring MVC+Mybatis(Maven构建)
 [![Build Status](https://travis-ci.org/withstars/Blog-System.svg?branch=master)](https://travis-ci.org/withstars/Blog-System)
 ### 技术点
-> Bootstrap 4<br/>
-> Jquery,Ajax<br/>
-> Layer弹出层插件<br/>
-> Spring 4<br/>
-> Spring MVC<br/>
-> MyBatis<br/>
-> pageHelper<br/>
+1. Bootstrap 4
+2. Jquery,Ajax
+3. Layer弹出层插件
+4. Spring 4
+5. Spring MVC
+6. MyBatis
+7. pageHelper
 ### 如何使用
 1. ①.*git clone https://github.com/withstars/Blog-System* <br/>
    ②.*cd  Blog-System*<br/>
@@ -22,8 +22,8 @@
 7. 单击管理窗口的刷新按钮，等待依赖下载完毕。
 8. 点击Maven Projects\Blog-System\Plugins\jetty\jetty:run启动jetty服务器。<br/>
     默认端口号为8080。可在pom.xml中修改。
-9. 待服务器启动完毕后，在浏览器地址栏输入 http://localhost:8080 进入博客主页,http://localhost:8080/admin进入管理后台登陆页。<br/>
-如有问题，请联系我 withstars@126.com
+9. 待服务器启动完毕后，在浏览器地址栏输入 http://localhost:8080 进入博客主页,http://localhost:8080/admin进入管理后台登陆页。
+#### 如有问题，请联系我 withstars@126.com
 ### 项目截图
 1. 博客主页
 <img src="https://github.com/withstars/Blog-System/blob/master/preview/1.PNG">
