@@ -1,14 +1,6 @@
 # 个人博客系统
 #### 基于Spring+Spring MVC+Mybatis(Maven方式构建)
 [![Build Status](https://travis-ci.org/withstars/Blog-System.svg?branch=master)](https://travis-ci.org/withstars/Blog-System)
-### 使用技术
-1. Bootstrap 4
-2. Jquery,Ajax
-3. Layer
-4. Spring 4
-5. Spring MVC
-6. MyBatis
-7. PageHelper
 ### 如何使用
 1. ①.*git clone https://github.com/withstars/Blog-System* <br/>
    ②.*cd  Blog-System*<br/>
