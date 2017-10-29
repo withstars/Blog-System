@@ -2,19 +2,11 @@
 #### 基于Spring+Spring MVC+Mybatis(Maven方式构建)
 [![Build Status](https://travis-ci.org/withstars/Blog-System.svg?branch=master)](https://travis-ci.org/withstars/Blog-System)
 ### 如何使用
-1. ①.*git clone https://github.com/withstars/Blog-System* <br/>
-   ②.*cd  Blog-System*<br/>
-   或<br/>
-   ①.下载zip文件<br/>
-   ②.解压文件，进入解压后的文件夹 <br/>
-2. 启动数据库服务,新建数据库名为blog,将sql文件导入blog数据库。
-3. 用IDEA打开项目根文件夹。
-4. 配置src\main\resources\jdbc.properties中的数据库设置项。
-5. 单击IDEA右边侧栏的Maven Projects选项卡，将弹出Maven项目的管理窗口。
-7. 单击管理窗口的刷新按钮，等待依赖下载完毕。
-8. 点击Maven Projects\Blog-System\Plugins\jetty\jetty:run启动jetty服务器。<br/>
-    默认端口号为8080。可在pom.xml中修改。
-9. 待服务器启动完毕后，在浏览器地址栏输入 http://localhost:8080 进入博客主页,http://localhost:8080/admin进入管理后台登陆页。
+1. *git clone https://github.com/withstars/Blog-System* <br/>
+    *cd  Blog-System*<br/>
+2. 导入sql并配置数据库连接.
+3. 下载依赖,启动Maven服务器.默认端口号8080.
+4. 进入 http://localhost:8080 博客主页,http://localhost:8080/admin后台登陆页.
 #### 如有问题，请联系我 withstars@126.com
 ### 项目截图
 1. 博客主页
