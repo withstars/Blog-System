@@ -7,6 +7,9 @@
 2. 导入sql并配置数据库连接.
 3. 下载依赖,启动Jetty服务.默认端口号8080.
 4. 进入 http://localhost:8080 博客主页,http://localhost:8080/admin 后台登陆页.
+### 说明
+1. 如果使用该项目出现问题，请联系我 withstars@126.com
+2. 如果该项目对您有帮助,请star鼓励我
 ### 项目截图
 1. 博客主页
 <img src="https://github.com/withstars/Blog-System/blob/master/preview/1.PNG">
