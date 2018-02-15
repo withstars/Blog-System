@@ -1,6 +1,7 @@
 # 个人博客系统
 #### 基于Spring+Spring MVC+Mybatis(Maven方式构建)
 [![Build Status](https://travis-ci.org/withstars/Blog-System.svg?branch=master)](https://travis-ci.org/withstars/Blog-System)
+[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/withstars/Blog-System)
 ### 如何使用
 1. *git clone https://github.com/withstars/Blog-System* <br/>
     *cd  Blog-System*<br/>
