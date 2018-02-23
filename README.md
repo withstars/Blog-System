@@ -3,11 +3,22 @@
 [![Build Status](https://travis-ci.org/withstars/Blog-System.svg?branch=master)](https://travis-ci.org/withstars/Blog-System)
 [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/withstars/Blog-System)
 ### 如何使用
-1. *git clone https://github.com/withstars/Blog-System* <br/>
-    *cd  Blog-System*<br/>
-2. 导入sql并配置数据库连接.
-3. 下载依赖,启动Jetty服务.默认端口号8080.
-4. 进入 http://localhost:8080 博客主页,http://localhost:8080/admin 后台登陆页.
+```
+$ git clone https://github.com/withstars/Blog-System
+
+$ cd Blog-System
+
+$ mvn clean compile
+
+$ mvn clean package
+
+$ mvn clean install
+
+$ mvn jetty:run
+
+http://localhost:8080
+http://localhost:8080/admin 
+```
 ### 说明
 1. 如果使用该项目出现问题，请联系我 withstars@126.com
 2. 如果该项目对您有帮助,请star鼓励我
