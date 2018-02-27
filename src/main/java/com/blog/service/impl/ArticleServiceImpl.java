@@ -46,4 +46,12 @@ public class ArticleServiceImpl implements ArticleService{
     public boolean insert(Article article) {
         return articleDao.insert(article)>0;
     }
+
+    public Article selectLastArticle(Integer id) {
+        return articleDao.selectLastArticle(id);
+    }
+
+    public Article selectNextArticle(Integer id) {
+        return articleDao.selectNextArticle(id);
+    }
 }

@@ -29,9 +29,12 @@ public class LoginController {
     AdminServiceImpl adminService;
     @Autowired
     AdminLoginLogServiceImpl adminLoginLogService;
-    @RequestMapping(value = {"/admin/index","/admin"})
-    public String toIndex() {
+    @RequestMapping(value = {"/admin/index","/admin","/admin/login"})
+    public String toIndex(HttpServletRequest request) {
+
         return "admin/login";
+
+
     }
 
     // 0:用户不存在  1:密码错误 2:登陆成功
@@ -53,6 +56,7 @@ public class LoginController {
             adminLoginLog.setIp(ip);
             int log=adminLoginLogService.insert(adminLoginLog);
             Cookie cookie = new Cookie("userId",""+id);
+            cookie.setMaxAge(3600*24);
             httpServletResponse.addCookie(cookie);
             request.getSession().setAttribute("admin",adminService.getById(id));
             res.put("stateCode", "2");
@@ -62,9 +66,8 @@ public class LoginController {
     }
 
     @RequestMapping(value = {"/admin/logout"})
-    public String logout(HttpServletRequest request,RedirectAttributes redirectAttributes) {
+    public String logout(HttpServletRequest request,HttpServletResponse response) {
         request.getSession().removeAttribute("admin");
-        request.getSession().invalidate();
         return "redirect:/admin";
 
     }

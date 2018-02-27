@@ -6,10 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <title>星·光</title>
-    <link rel="shortcut icon" type="image/x-icon" href="http://ombs76e55.bkt.clouddn.com/web-icon.png" media="screen" />
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/img/web-icon.png" media="screen" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <style>
 
         *{
@@ -69,7 +69,7 @@
         }/*去掉链接下划线*/
         #bg {
             position: relative;
-            background: url("img/296494-106.jpg") no-repeat gray;
+            background: url("/img/296494-106.jpg") no-repeat gray;
             background-size: cover;
         }/*设置背景图片*/
         #bg p {
@@ -251,7 +251,7 @@
 
     </style>
 </head>
-<body background="img/bg.png" >
+<body background="/img/bg.png" >
 
 <div>
     <header id="header">
@@ -259,14 +259,14 @@
             <ul>
                 <li>
                     <a href="/">首页</a>
-                    <a href="/about">关于我</a>
+                    <a href="/about">关于</a>
                 </li>
             </ul>
             <div class="my-info" onmouseover="hiddeewm()" onmouseout="hiddeewm()">
                 <figure></figure>
                 <span>星·光</span>
                 <div id="hiddenewm" hidden="true" >
-                    <img src="img/me.jpg" width="200px" height="200px" >
+                    <img src="/img/me.jpg" width="200px" height="200px" >
                     <p></p>
                 </div>
             </div>
@@ -283,6 +283,7 @@
 <article class="article">
             <time id="time1">${article.localTime}</time>
             <h2 style="text-align: center; ">${article.title}</h2>
+            <p style="position: center" class="text-info">点击量:${article.click}</p>
             <section>
                 <blockquote>
                     <p>${article.desci}</p>
@@ -321,17 +322,17 @@
                  </div>
         <input id="articleId" type="hidden" value="${article.id}" >
     					<div class="form-group">
-                    		<label for="inputPassword" class="col-sm-2 control-label">昵称</label>
+                    		<label for="name" class="col-sm-2 control-label">昵称</label>
 
                     		<div class="col-sm-3">
-                    			<input type="text" id="name" class="form-control" id="inputPassword"
+                    			<input type="text" id="name" class="form-control"
                     				   placeholder="昵称">
                     		</div>
                     	</div>
                     	<div class="form-group">
-                               <label for="inputPassword" class="col-sm-2 control-label">邮箱</label>
+                               <label for="email" class="col-sm-2 control-label">邮箱</label>
                                 <div class="col-sm-3">
-                                  <input type="email" id="email" class="form-control" id="inputPassword" placeholder="邮箱">
+                                  <input type="email" id="email" class="form-control"  placeholder="邮箱">
                                 </div>
                         </div>
                         <div class="form-group" style="position:relative;left:13%">
@@ -382,16 +383,20 @@
                         })
 
                     </script>
-    <div style="position: relative;;left: 80%">
-        <div ><a href=""><h4><span class="label label-primary">上一篇</span></h4></a></div>
-        <div><a href=""><h4><span class="label label-success">下一篇</span></h4></a></div>
+    <div style="position: relative;left: 12%">
+        <c:if test="${!empty lastArticle }">
+            <div ><a href="/article/?id=${lastArticle.id}"><h4><span class="label label-primary">上一篇:${lastArticle.title}</span></h4></a></div>
+        </c:if>
+        <c:if test="${!empty nextArticle }">
+            <div><a href="/article/?id=${nextArticle.id}"><h4><span class="label label-success">下一篇:${nextArticle.title}</span></h4></a></div>
+        </c:if>
     </div>
     </div>
 
     <footer id="footer">
         <section id="copyright">
             <p style="font-size: 20px">
-                © 2017 <a href="/">星·光</a>
+                © 2018 <a href="/">星·光</a>
             </p>
         </section>
     </footer>

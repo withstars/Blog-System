@@ -16,6 +16,10 @@ public interface ArticleDao {
 
     Article selectByPrimaryKey(Integer id);
 
+    Article selectLastArticle(Integer id);
+
+    Article selectNextArticle(Integer id);
+
     int updateByPrimaryKeySelective(Article record);
 
     int updateByPrimaryKeyWithBLOBs(Article record);

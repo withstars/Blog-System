@@ -7,10 +7,10 @@
 <head>
     <meta charset="UTF-8">
     <title>博客管理系统</title>
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.bootcss.com/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/bootstrap4.0.min.css" >
+    <script src="/js/jquery.slim.min.js" ></script>
+    <script src="/js/popper.min.js" ></script>
+    <script src="/js/bootstrap4.0.min.js"></script>
     <script src="/js/layer.js"></script>
 </head>
 <body>
@@ -34,10 +34,10 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="/admin/main">主页 <span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item active">
+                <a class="nav-link" href="/admin/main">主页 </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/admin/article/list">文章管理</a>
 
             </li>
@@ -45,8 +45,10 @@
         </ul>
         <form class="form-inline my-2 my-lg-0" action="/admin/article/search" method="GET">
             <input class="form-control mr-sm-2" type="search" placeholder="文章标题或内容..." aria-label="Search" name="word">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+            <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" type="submit">搜索</button>
         </form>
+
+        <a class="btn btn-outline-danger btn-sm" href="/admin/logout" role="button">退出</a>
     </div>
 </nav>
 <div class="card mb-3">

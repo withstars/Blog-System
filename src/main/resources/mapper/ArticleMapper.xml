@@ -27,6 +27,22 @@
     where id = #{id,jdbcType=INTEGER}
   </select>
 
+  <select id="selectLastArticle" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    id,title
+    from article
+    where id &lt; #{id,jdbcType=INTEGER} ORDER BY id desc limit 1;
+  </select>
+
+  <select id="selectNextArticle" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    id,title
+    from article
+    where id &gt; #{id,jdbcType=INTEGER} ORDER BY id ASC limit 1;
+  </select>
+
+
+
   <select id="selectByWord" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select
     *

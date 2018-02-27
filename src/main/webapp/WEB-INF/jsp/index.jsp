@@ -5,10 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <title>星·光</title>
-    <link rel="shortcut icon" type="image/x-icon" href="http://ombs76e55.bkt.clouddn.com/web-icon.png" media="screen" />
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/img/web-icon.png" media="screen" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <style>
 
         *{
@@ -248,7 +248,7 @@
             <ul>
                 <li>
                     <a href="/">首页</a>
-                    <a href="/about">关于我</a>
+                    <a href="/about">关于</a>
                 </li>
             </ul>
             <div class="my-info" onmouseover="hiddeewm()" onmouseout="hiddeewm()">
@@ -299,7 +299,7 @@
     <footer id="footer">
         <section id="copyright">
             <p style="font-size: 20px">
-                © 2017 <a href="/">星·光</a>
+                © 2018 <a href="/">星·光</a>
             </p>
         </section>
     </footer>

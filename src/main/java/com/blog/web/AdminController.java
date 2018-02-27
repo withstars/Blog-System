@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Repository
 @RequestMapping("/admin")
@@ -35,19 +36,33 @@ public class AdminController {
         SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm");//设置日期格式
         String dates = df.format(date);
         Admin admin=(Admin) request.getSession().getAttribute("admin");
-        AdminLoginLog adminLoginLog=adminLoginLogService.selectRencent(admin.getId());
-        int articleCount=articleService.selectCount();
-        int commentCount=commentService.countAllNum();
-        int loginNum=adminLoginLogService.selectCountByAdminId(admin.getId());
-        modelAndView.addObject("clientIp",clientIp);
-        modelAndView.addObject("hostIp",hostIp);
-        modelAndView.addObject("hostPort",hostPort);
-        modelAndView.addObject("date",dates);
-        modelAndView.addObject("loginLog",adminLoginLog);
-        modelAndView.addObject("articleCount",articleCount);
-        modelAndView.addObject("commentCount",commentCount);
-        modelAndView.addObject("loginNum",loginNum);
-        return modelAndView;
+        AdminLoginLog lastLoginLog=null;
+        try {
+            if (adminLoginLogService.selectRencent(admin.getId())!=null && adminLoginLogService.selectRencent(admin.getId()).size()==2){
+                List<AdminLoginLog> adminLoginLogs=adminLoginLogService.selectRencent(admin.getId());
+                lastLoginLog=adminLoginLogs.get(1);
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            int articleCount=articleService.selectCount();
+            int commentCount=commentService.countAllNum();
+            int loginNum=adminLoginLogService.selectCountByAdminId(admin.getId());
+            modelAndView.addObject("clientIp",clientIp);
+            modelAndView.addObject("hostIp",hostIp);
+            modelAndView.addObject("hostPort",hostPort);
+            modelAndView.addObject("date",dates);
+            if (lastLoginLog!=null){
+                modelAndView.addObject("loginLog",lastLoginLog);
+            }
+            modelAndView.addObject("articleCount",articleCount);
+            modelAndView.addObject("commentCount",commentCount);
+            modelAndView.addObject("loginNum",loginNum);
+            return modelAndView;
+        }
+
+
     }
 
 }

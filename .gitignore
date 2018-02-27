@@ -1,3 +1,4 @@
 .idea
 Blog-System.iml
 target
+*.log

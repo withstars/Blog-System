@@ -30,9 +30,13 @@ public class ArticleController {
 
     @RequestMapping("/article")
     public ModelAndView detail(HttpServletRequest request){
+
         int id=Integer.parseInt(request.getParameter("id"));
         List<Comment> comments=commentService.allComments(id,0,10);
+
         Article article=articleService.selectById(id);
+        Article lastArticle=articleService.selectLastArticle(id);
+        Article nextArticle=articleService.selectNextArticle(id);
 
         Integer clickNum=article.getClick();
         article.setClick(clickNum+1);
@@ -41,14 +45,18 @@ public class ArticleController {
         ModelAndView modelAndView=new ModelAndView("detail");
         modelAndView.addObject("article",article);
         modelAndView.addObject("comments",comments);
+        modelAndView.addObject("lastArticle",lastArticle);
+        modelAndView.addObject("nextArticle",nextArticle);
         return modelAndView;
     }
     @RequestMapping("/admin/article/detail")
     public ModelAndView adminArticleDetail(HttpServletRequest request){
         int id=Integer.parseInt(request.getParameter("id"));
         Article article=articleService.selectById(id);
+
         ModelAndView modelAndView=new ModelAndView("/admin/article_detail");
         modelAndView.addObject("article",article);
+
 
         return modelAndView;
     }

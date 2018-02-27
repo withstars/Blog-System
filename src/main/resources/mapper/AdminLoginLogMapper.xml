@@ -27,7 +27,7 @@
     from admin_login_log
     where admin_id = #{adminId,jdbcType=INTEGER}
     ORDER BY id DESC
-    LIMIT 1
+    LIMIT 2
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
