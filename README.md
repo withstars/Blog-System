@@ -1,8 +1,13 @@
-# 个人博客系统
-#### 基于Spring+Spring MVC+Mybatis(Maven方式构建)
-[![Build Status](https://travis-ci.org/withstars/Blog-System.svg?branch=master)](https://travis-ci.org/withstars/Blog-System)
-[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/withstars/Blog-System)<br/>
+<h1 align="center"> 个人博客系统</h1>
+<h2 align="center"> 基于Spring+Spring MVC+Mybatis(Maven方式构建)</h2>
+
+<p align="center">
+ <a href="https://travis-ci.org/withstars/Blog-System"><img src="https://travis-ci.org/withstars/Blog-System.svg?branch=master" alt="travis-ci"></a>
+ <a href="https://github.com/withstars/Blog-System"><img src="https://img.shields.io/hexpm/l/plug.svg" alt="license"></a>
+</p>
+
 <img src="https://github.com/withstars/Blog-System/blob/master/preview/0.png">
+
 ### 如何使用
 ```
 $ git clone https://github.com/withstars/Blog-System
